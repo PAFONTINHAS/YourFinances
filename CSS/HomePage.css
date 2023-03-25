@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    max-height: 100vh;
+    max-width: 99.1vw;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+header{
+
+    background-color: #050023;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.menulateral{
+  position: absolute;
+  background: #050023;
+  left: 0;
+  max-height: 100vh;
+  width: 12%;
+  top: 100px;
+}
+
+.menulateral .nav-links{
+
+  height: 100vh;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menulateral .nav-links li{
+
+  position: relative;
+  list-style:none;
+  line-height: 53px;
+
+}
+
+.menulateral .nav-links li i {
+
+  height: 40px;
+  min-width: 7px;
+  line-height: 50px;
+  color: white;
+  font-size: 20px;
+
+}
+
+.menulateral .nav-links li a {
+
+  text-decoration: none;
+
+}
+
+.menulateral .nav-links li a .link_name{
+
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+
+}
+
+.menulateral .nav-links li:hover{
+
+  background:  #221e49;
+  transition: all 0.4 ease
+}
+
+.menulateral .nav-links li .sub-menu{
+
+  padding: 6px 6px 14px 50px;
+  margin-top: 10px;
+  background: #221e49;
+  line-height: 3;
+  /* display: none; */
+
+}
+
+.menulateral .nav-links li .sub-menu a{
+
+  color: white;
+  font-size: 15px;
+  padding: 5px 0;
+
+
+}
+
+.menulateral.close .nav-links li .sub-menu{
+
+    position: absolute;
+
+}
+
