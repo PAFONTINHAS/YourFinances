@@ -1,37 +1,25 @@
 <?php
 
-require 'PHP/conexao/banco.php';
-require 'PHP/registro.php';
+include ('PHP/conexao/banco.php');
+include ('PHP/classes/usuario.php');
+
+$database = new Conexao();
+$db = $database->getConnection();
+
+$usuario = new Usuario($db);
+
 
 if (isset($_POST['Logar'])) {
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Busca no banco de dados pelo email informado
-    $stmt = $conn->prepare("SELECT * FROM usuario WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-    // Verifica se o usuário foi encontrado e se a senha corresponde
-    if ($usuario && password_verify($senha, $usuario['senha'])) {
-        // Login bem sucedido - redireciona para a página de perfil do usuário
-        session_start();
-        $_SESSION['id_usuario'] = $usuario['id'];
-        header("Location: Home/HomePage.php");
+    if ($usuario->logar($email,$senha)){
+        $_SESSION['id'] = $id;
         exit();
-    } else if(empty($email) or empty($criptSenha))
-    {
-        print "<script>alert('certifique-se que todas as informacoes foram inseridas corretamente')</script>";
-        print "<script>location.href='index.php';</script>";
-    }else {
-        // Login falhou - exibe uma mensagem de erro
-        $mensagem_erro = "Email ou senha incorretos.";
     }
 }
+
 
 ?>
 
@@ -44,7 +32,7 @@ if (isset($_POST['Logar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Finances</title>
     <link rel="shortcut icon" type="image/png" href="./Logo/YourFinancesLogo.jpg">
-    <link rel="stylesheet" href="CSS/LoginRegistro/LoginPage.css">
+    <link rel="stylesheet" href="CSS_LoginRegistro/LoginPage.css">
 
 </head>
 <body>
@@ -99,3 +87,5 @@ if (isset($_POST['Logar'])) {
 
 </body>
 </html>
+
+

@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  position: fixed;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    max-height: 100vh;
+    max-width: 99.1vw;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+header{
+
+    background-color: #050023;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+
+}
+
+.sidebar{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  height: 150%;
+  width: 270px;
+  background: #11101d;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.sidebar.close{
+  width: 78px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 30px;
+  color: #fff;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+.sidebar .logo-details .logo_name{
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+.sidebar.close .logo-details .logo_name{
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links{
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow: auto;
+}
+.sidebar.close .nav-links{
+  overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar{
+  display: none;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover{
+  background: #1d1b31;
+}
+.sidebar .nav-links li .iocn-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link{
+  display: block
+}
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow{
+  display: none;
+}
+.sidebar .nav-links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-links li a .link_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: 0px;
+  background: #1d1b31;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 3;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar .profile-details{
+  position: fixed;
+  bottom: 0;
+  height: 7%;
+  width: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1d1b31;
+  padding: 12px 0;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details{
+  background: none;
+}
+.sidebar.close .profile-details{
+  width: 78px;
+}
+.sidebar .profile-details .profile-content{
+  display: flex;
+  align-items: center;
+}
+.sidebar .profile-details img{
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details img{
+  padding: 10px;
+}
+.sidebar .profile-details .profile_name,
+.sidebar .profile-details .job{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name,
+.sidebar.close .profile-details .job{
+  display: none;
+}
+.sidebar .profile-details .job{
+  font-size: 12px;
+}
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  height: 100vh;
+  left: 260px;
+  width: calc(100% - 260px);
+  /* transition: all 0.5s ease; */
+}
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+ .home-section .home-content{
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+  color: #11101d;
+  font-size: 35px;
+}
+.home-section .home-content .bx-menu{
+  margin: 0 15px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.home-section .home-content .text{
+
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.tituloDespesa{
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  font-size: xx-large;
+}
+.conteiner{
+
+    position: absolute;
+    background-color: white;
+    top: 10%;
+    left: 4%;
+    width: 94%;
+    height: 76%;
+
+}
+
+
+
+
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: black;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: blue;
+}
+
+.selecionada {
+  background-color: rgba(0, 0, 255, 0.319);
+}
+
+.Sim,
+.Despesa_Finalizada {
+  background-color: #7FFF7F; /* Verde para despesas pagas */
+}
+
+.Não {
+  background-color: #FF7F7F; /* Vermelho para despesas não pagas */
+}
+
+.botao-pagar,
+.botao-excluir,
+.botao-cadastro,
+.botao-aumentar {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.botao-pagar,
+.botao-aumentar {
+  background-color: #7FFF7F; /* Verde */
+  color: white;
+}
+
+.botao-excluir {
+  background-color: #FF7F7F; /* Vermelho */
+  color: white;
+}
+
+.botao-cadastro {
+  background-color: #FFFF7F; /* Amarelo */
+  color: black;
+}
+
+/* Estilos do modal */
+.modal {
+  display: none;
+  padding: 0;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+  background-color: #f8f8f8;
+  margin: 3% auto;
+  position: center;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos do botão de fechar */
+.fechar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos para o título do modal */
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Estilos para o calendário */
+.calendario {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilos para o botão de pagamento */
+.botao-pagar {
+  background-color: #4caf50;
+}
+
+.botao-pagar:hover {
+  background-color: #45a049;
+}
+
+.botao-excluir {
+  background-color: red;
+}
+
+.botao-excluir:hover {
+  background-color: red;
+}
+
+.flatpickr-calendar {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.flatpickr-month,
+.flatpickr-weekdays {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.flatpickr-weekdays {
+  color: #888;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.flatpickr-day {
+  padding: 0.5em;
+  transition: background-color 0.2s ease;
+}
+
+.flatpickr-day:hover {
+  background-color: #eee;
+}
+
+.flatpickr-day.today {
+  background-color: #eaf1ff;
+}
+
+.flatpickr-day.selected {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+
+
+.valores{
+  position: absolute;
+  top: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}

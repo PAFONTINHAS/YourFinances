@@ -33,7 +33,7 @@ main h1{
 /*   PROPRIEDADES DA IMAGEM DE FUNDO   */
 
 body {
-    background-image: url(../LoginRegistro/LoginBackground/LoginBackground.jpg);
+    background-image: url(../CSS_LoginRegistro/LoginBackground/LoginBackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 100%;

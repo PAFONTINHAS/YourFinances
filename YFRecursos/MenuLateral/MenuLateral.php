@@ -31,26 +31,30 @@
           <span class="link_name">Início</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../Home/HomePage.html">Início</a></li>
+          <li><a class="link_name" href="../Home/HomePage.php">Início</a></li>
         </ul>
       </li>
+      <div class="RD">
       <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Receitas e Despesas</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Receitas e Despesas</a></li>
-          <li><a href="../DespesaReceita/GestReceitas.html">Gestão de Receitas</a></li>
-          <li><a href="../DespesaReceita/CadastroReceitas.html">Cadastro de Receitas</a></li>
-          <li><a href="../GestDespesas.html">Gestão de Despesas</a></li>
-          <li><a href="../CadastroDespesas.html">Cadastro de Despesas</a></li>
+              <div class="iocn-link">
+                <a href="#">
+                  <i class='bx bx-collection' ></i>
+                  <span class="link_name">Receitas e Despesas</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <ul class="sub-menu">
+                <li><a class="link_name" href="#">Receitas e Despesas</a></li>
+                <li><a href="../Cadastro/GestaoReceitas.php">Gestão de Receitas</a></li>
+                <li><a href="../DespesaReceita/CadastroReceitas.php">Cadastro de Receitas</a></li>
+                <li><a href="../GestDespesas.php">Gestão de Despesas</a></li>
+                <li><a href="../DespesaReceita/CadastroDespesas.php">Cadastro de Despesas</a></li>
 
-        </ul>
-      </li>
+              </ul>
+            </li>
+
+      </div>
+
       <li>
         <div class="iocn-link">
           <a href="#">
@@ -61,52 +65,12 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Orçamento Mensal</a></li>
-          <li><a href="../Orcamento/DefOrcamento.html">Definir Novo Orçamento</a></li>
-          <li><a href="../Orcamento/VerOrcamentos.html">Visualizar Orçamentos</a></li>
+          <li><a href="../Orcamento/cadastrarOrcamento.php">Definir Novo Orçamento</a></li>
+          <li><a href="../Orcamento/VerOrcamentos.php">Visualizar Orçamentos</a></li>
         </ul>
       </li>
       <li>
-        <a href="#">
-          <i class='bx bx-pie-chart-alt-2' ></i>
-          <span class="link_name">Metas</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Metas Financeiras</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Chart</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Chart</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-plug' ></i>
-            <span class="link_name">Extratos</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Extratos</a></li>
-          <li><a href="../Extrato/VerExtratos.html">Ver Extrato</a></li>
-          <li><a href="../Extrato/ImportExtratos.html">Importar Extratos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-compass' ></i>
-          <span class="link_name">Explore</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Explore</a></li>
-        </ul>
-      </li>
-      <li>
+
 
         <a href="#">
           <i class='bx bx-cog' ></i>
@@ -127,17 +91,22 @@
         </ul>
       </li>
       <li>
-
       </div>
-
   </li>
 </ul>
   </div>
-  <section class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-    </div>
-  </section>
+      <section class="home-section">
+
+
+
+
+
+      <div class="home-content">
+          <i class='bx bx-menu' ></i>
+        </div>
+      </section>
+  </div>
+
   <script>
   let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {

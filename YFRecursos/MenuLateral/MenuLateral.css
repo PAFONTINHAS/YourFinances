@@ -13,7 +13,7 @@
 
 header{
 
-    
+
     background-color: #11101d;
     color: white;
     text-align: center;
@@ -23,6 +23,9 @@ header{
     display: flex;
     justify-content: space-around;
 
+}
+.container {
+  position: relative;
 }
 
 .sidebar{
@@ -35,9 +38,10 @@ header{
     z-index: 100;
     transition: all 0.5s ease;
   }
-  
+
   .sidebar.close{
     width: 78px;
+
   }
   .sidebar .logo-details{
     height: 60px;
@@ -180,7 +184,7 @@ header{
     top: 50%;
     transform: translateY(-50%);
   }
-  
+
   .home-section{
     position: relative;
     background: #E4E9F7;
@@ -192,7 +196,7 @@ header{
   .sidebar.close ~ .home-section{
     left: 78px;
     width: calc(100% - 78px);
-  } 
+  }
    .home-section .home-content{
     height: 60px;
     display: flex;
@@ -231,5 +235,6 @@ header{
       left: 0;
     }
   }
-  
-  
+
+
+  @import 'content.scss';

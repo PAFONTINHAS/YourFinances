@@ -1,3 +1,50 @@
+<?php
+include('PHP/conexao/banco.php');
+include ('PHP/classes/Usuario.php');
+
+$database = new Conexao();
+$db = $database->getConnection();
+
+$usuario = new Usuario($db);
+
+
+    if (isset($_POST['Registrar'])){
+    $nome= $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $confirSenha = $_POST['confirSenha'];
+
+    // verifica se algum dos campos está vazio
+    if($senha != $confirSenha){
+        echo "<script>alert('As Senhas não coincidem.');</script>";
+
+    }
+    elseif( strlen($senha) < 8){
+
+        echo "<script>alert('A senha deve ter pelo menos 8 caracteres');</script>";
+
+    }
+
+    elseif (empty($nome) || empty($email) || empty($senha) || empty($confirSenha)) {
+        // exibe um alerta e redireciona para a página de cadastro
+        echo "<script>alert('Certifique-se de que todas as informações foram inseridas corretamente');</script>";
+        exit;
+
+    }
+    else{
+
+        if ($usuario->cadastrar($nome, $email, $senha, $confirSenha)){
+
+            echo "<script>alert('Usuario Cadastrado Com Sucesso');</script>";
+        }
+        else{
+            echo "Erro ao cadastrar";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +53,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Finances</title>
     <link rel="shortcut icon" type="image/png" href="./Logo/YourFinancesLogo.jpg">
-    <link rel="stylesheet" href="CSS/LoginRegistro/LoginPage.css">
-    <link rel="stylesheet" href="CSS/LoginRegistro/RegisterPage.css">
+    <link rel="stylesheet" href="CSS_LoginRegistro/LoginPage.css">
+    <link rel="stylesheet" href="CSS_LoginRegistro/RegisterPage.css">
+
 
 </head>
 <body>
@@ -17,7 +65,7 @@
     <!-- Elemento principal do site -->
         <h1>Your Finances</h1>
 
-    <form action="PHP/registro.php" method = "POST">
+    <form method = "POST">
 
         <div class="RegisterConteiner">
             <div class="RegisterCard">
